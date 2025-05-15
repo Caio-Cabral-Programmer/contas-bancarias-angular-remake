@@ -1,0 +1,54 @@
+header {
+  background-color: orangered; // Define a cor de fundo do cabeçalho como laranja avermelhado. É como pintar a caixa grande de laranja.
+  width: 100%; // Faz o cabeçalho ocupar 100% da largura da tela. Assim, ele vai de ponta a ponta.
+  height: 90px; // Define a altura do cabeçalho para 90 pixels. É como dizer que a caixa grande tem 90 "passinhos" de altura.
+  display: flex; // Transforma o cabeçalho em um contêiner flexível, permitindo organizar os itens filhos (imagem, texto, botão) de forma mais fácil. É como dar "super poderes" para a caixa organizar os brinquedos dentro dela.
+  align-items: center; // Centraliza os itens filhos verticalmente dentro do cabeçalho. Faz com que todos os brinquedos fiquem alinhados no meio, de cima para baixo.
+  justify-content: space-between; // Distribui o espaço entre os itens filhos, empurrando o primeiro item (imagem) para a esquerda, o último item (botão) para a direita e o item do meio (texto) para o centro. É como dizer para os brinquedos se espalharem e ocuparem o espaço disponível, com o primeiro indo para um lado, o último para o outro e o do meio ficando no meio.
+  padding: 0 20px; // Adiciona um espaço interno de 20 pixels nas laterais esquerda e direita do cabeçalho. Isso garante que os itens não fiquem colados nas bordas da tela. É como colocar um "colchãozinho" de 20 "passinhos" nas paredes laterais da caixa.
+}
+
+header img {
+  width: 60px; // Define a largura da imagem para 60 pixels. Aumenta o tamanho do brinquedo da imagem para 60 "passinhos" de largura.
+  height: 60px; // Define a altura da imagem para 60 pixels. Mantém a altura igual à largura para a imagem não ficar esticada ou achatada.
+  margin-left: 40px; // Esta linha não é mais necessária porque o padding no header e o justify-content já cuidam do espaçamento.
+}
+
+.header-text {
+  flex-grow: 1; // Faz esta div ocupar todo o espaço disponível entre a imagem e o botão. É como dizer para a caixinha de texto "crescer" e preencher o vazio no meio.
+  text-align: left; // Centraliza o texto (título e subtítulo) horizontalmente dentro desta div. Faz com que as palavras dentro da caixinha de texto fiquem alinhadas no centro.
+  margin: 0 20px; // Adiciona uma margem de 20 pixels nas laterais esquerda e direita desta div. Cria um espacinho entre a caixinha de texto e a imagem/botão.
+}
+
+.header-text h1 {
+  margin: 0; // Remove a margem padrão que os títulos <h1> costumam ter. Ajuda a deixar o título mais perto do subtítulo.
+  font-size: 1.7em; // Define o tamanho da fonte do título. 1.5em significa 1.5 vezes o tamanho da fonte padrão.
+  color: white; // Define a cor do texto do título como branco.
+}
+
+.header-text p {
+  margin: 0; // Remove a margem padrão que os parágrafos <p> costumam ter. Ajuda a deixar o subtítulo mais perto do título.
+  font-size: 1.1em; // Define o tamanho da fonte do subtítulo, um pouco menor que o título.
+  color: #eee; // Define a cor do texto do subtítulo como um cinza bem clarinho.
+}
+
+header button {
+  margin-right: 20px;
+  padding: 15px 25px;                                                                                               // Adiciona um espaço interno (preenchimento) dentro do botão, em cima/embaixo (15px) e nas laterais (25px). Faz o botão parecer maior e mais fácil de clicar, como se estivéssemos enchendo ele com um "recheio" de espaço.
+  background-color: white;                                                                                          // Define a cor de fundo do botão como branco. É como pintar o fundo do botão de branco para ele se destacar.
+  color: orangered;                                                                                                 // Define a cor do texto do botão como laranja avermelhado. Faz as letras dentro do botão ficarem com a cor laranja avermelhado.
+  border: none;                                                                                                     // Remove a borda padrão que os botões costumam ter. Deixa o botão sem aquela linha em volta, com um visual mais limpo.
+  border-radius: 5px;                                                                                               // Arredonda os cantos do botão em 5 pixels. Faz as pontinhas do botão ficarem um pouco redondas, como se fossem cantos de uma bolacha.
+  cursor: pointer;                                                                                                  // Muda o cursor do mouse para uma "mãozinha" quando você passa por cima do botão. Isso mostra para a pessoa que ela pode clicar ali, como se fosse um convite para apertar o botão.
+  font-size: 1.2em;                                                                                                 // Define o tamanho da fonte do texto dentro do botão. 1.2em significa que o texto será 1.2 vezes maior que o tamanho normal do texto na página.
+  transition: background-color 0.3s ease;                                                                           // Adiciona uma animação suave quando a cor de fundo do botão muda (por exemplo, quando você passa o mouse por cima). A mudança de cor acontece devagarzinho em 0.3 segundos, em vez de mudar de repente.
+  font-weight: bold;                                                                                                // Esta linha faz o texto dentro do botão ficar mais "gordinho" e escuro, como se estivesse em negrito. É como dar mais destaque para as palavras do botão, para elas chamarem mais atenção.
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);                                                                          // Esta linha adiciona uma sombrinha ao redor do botão inteiro. O "0 2px" diz para a sombra não ir para os lados (0) e ir 2 pixels para baixo (2px). O "4px" é o quanto a sombra fica "borrada" (espalhada). E o "rgba(0, 0, 0, 0.2)" define a cor da sombra (preto, mas bem transparente, 20% visível). É como se o botão estivesse um pouquinho levantado da página e projetasse uma sombra suave para baixo.
+  // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); // Esta linha foi removida porque queremos a sombra no botão, não no texto.
+}
+
+header button:hover {
+  background-color: orangered; // Define a cor de fundo do botão para um cinza bem clarinho quando o mouse passa por cima. Dá um efeito visual de interação.
+  color: #eee;
+  border: 1px solid white; // Added a visible 2px solid white border on hover
+}
