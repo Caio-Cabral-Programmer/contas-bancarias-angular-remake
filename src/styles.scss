@@ -1,5 +1,16 @@
+@use 'variables' as *;                                                              // Significa que estamos usando o arquivo "variables.scss" e estamos apelidando-o como "*" (tudo), ou seja, não preciso escrever variables. na frente do nome da variável. Isso significa que estamos importando todas as variáveis definidas no arquivo "variables.scss" para o arquivo atual.
+@use 'mixins' as *;                                                                 // Significa que estamos usando o arquivo "mixins.scss" e estamos apelidando-o como "*" (tudo), ou seja, não preciso escrever mixins. na frente do nome do mixin. Isso significa que estamos importando todas os mixins definidos no arquivo "mixins.scss" para o arquivo atual.
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}/* You can add global styles to this file, and also import other style files */
+}
+
+button {
+  @include botao-base;                                                                // Maneira correta de incluir um mixin em uma tag.
+}
+
+button:hover {
+  @include botao-base-hover;
+}
