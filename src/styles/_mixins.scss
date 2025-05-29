@@ -1,10 +1,10 @@
 @use 'variables' as *;
 // Botões
-@mixin botao-base {
+@mixin base-button {
   margin-right: 20px;
   padding: 15px 25px;                                                                                               // Adiciona um espaço interno (preenchimento) dentro do botão, em cima/embaixo (15px) e nas laterais (25px). Faz o botão parecer maior e mais fácil de clicar, como se estivéssemos enchendo ele com um "recheio" de espaço.
   background-color: white;                                                                                          // Define a cor de fundo do botão como branco. É como pintar o fundo do botão de branco para ele se destacar.
-  color: $cor-primaria;                                                                                                 // Define a cor do texto do botão como laranja avermelhado. Faz as letras dentro do botão ficarem com a cor laranja avermelhado.
+  color: $primary-color;                                                                                                 // Define a cor do texto do botão como laranja avermelhado. Faz as letras dentro do botão ficarem com a cor laranja avermelhado.
   border: none;                                                                                                     // Remove a borda padrão que os botões costumam ter. Deixa o botão sem aquela linha em volta, com um visual mais limpo.
   border-radius: 5px;                                                                                               // Arredonda os cantos do botão em 5 pixels. Faz as pontinhas do botão ficarem um pouco redondas, como se fossem cantos de uma bolacha.
   cursor: pointer;                                                                                                  // Muda o cursor do mouse para uma "mãozinha" quando você passa por cima do botão. Isso mostra para a pessoa que ela pode clicar ali, como se fosse um convite para apertar o botão.
@@ -14,8 +14,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);                                                                          // Esta linha adiciona uma sombrinha ao redor do botão inteiro. O "0 2px" diz para a sombra não ir para os lados (0) e ir 2 pixels para baixo (2px). O "4px" é o quanto a sombra fica "borrada" (espalhada). E o "rgba(0, 0, 0, 0.2)" define a cor da sombra (preto, mas bem transparente, 20% visível). É como se o botão estivesse um pouquinho levantado da página e projetasse uma sombra suave para baixo.
 }
 
-@mixin botao-base-hover {
-  background-color: $cor-primaria; // Define a cor de fundo do botão para um cinza bem clarinho quando o mouse passa por cima. Dá um efeito visual de interação.
+@mixin base-button-hover {
+  background-color: $primary-color; // Define a cor de fundo do botão para um cinza bem clarinho quando o mouse passa por cima. Dá um efeito visual de interação.
   color: #eee;
   border: 1px solid white; // Added a visible 2px solid white border on hover
 

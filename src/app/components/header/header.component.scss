@@ -1,11 +1,12 @@
+@use 'variables' as *;
+
 header {
-  background-color: $cor-primaria; // Define a cor de fundo do cabeçalho como laranja avermelhado. É como pintar a caixa grande de laranja.
+  background-color: $primary-color; // Define a cor de fundo do cabeçalho como laranja avermelhado. É como pintar a caixa grande de laranja.
   width: 100%; // Faz o cabeçalho ocupar 100% da largura da tela. Assim, ele vai de ponta a ponta.
   height: 90px; // Define a altura do cabeçalho para 90 pixels. É como dizer que a caixa grande tem 90 "passinhos" de altura.
   display: flex; // Transforma o cabeçalho em um contêiner flexível, permitindo organizar os itens filhos (imagem, texto, botão) de forma mais fácil. É como dar "super poderes" para a caixa organizar os brinquedos dentro dela.
   align-items: center; // Centraliza os itens filhos verticalmente dentro do cabeçalho. Faz com que todos os brinquedos fiquem alinhados no meio, de cima para baixo.
   justify-content: space-between; // Distribui o espaço entre os itens filhos, empurrando o primeiro item (imagem) para a esquerda, o último item (botão) para a direita e o item do meio (texto) para o centro. É como dizer para os brinquedos se espalharem e ocuparem o espaço disponível, com o primeiro indo para um lado, o último para o outro e o do meio ficando no meio.
-  padding: 0 20px; // Adiciona um espaço interno de 20 pixels nas laterais esquerda e direita do cabeçalho. Isso garante que os itens não fiquem colados nas bordas da tela. É como colocar um "colchãozinho" de 20 "passinhos" nas paredes laterais da caixa.
 }
 
 header img {

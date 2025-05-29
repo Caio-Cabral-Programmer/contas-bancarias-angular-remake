@@ -1,6 +1,10 @@
-app-header {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+.app-container {
+  display: flex;                                                                        /* Transforma em um contêiner Flexbox */
+  flex-direction: column;                                                               /* Coloca os itens (header, main, footer) um embaixo do outro */
+  min-height: 100vh;                                                                    /* Garante que o contêiner tenha NO MÍNIMO a altura total da viewport */
+                                                                                        // 100vh significa 100% da "viewport height" (altura visível da tela)
+}
+
+.app-main-content {
+  flex-grow: 1;                                                                         // Esta parte diz: "Cresça e ocupe todo o espaço extra disponível   /* Se houver espaço extra, ele pega. Se não houver, ele continua no tamanho normal */
 }
