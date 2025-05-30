@@ -15,8 +15,8 @@
 }
 
 @mixin base-button-hover {
-  background-color: $primary-color; // Define a cor de fundo do botão para um cinza bem clarinho quando o mouse passa por cima. Dá um efeito visual de interação.
+  background-color: $primary-color;                       // Define a cor de fundo do botão para um cinza bem clarinho quando o mouse passa por cima. Dá um efeito visual de interação.
   color: #eee;
-  border: 1px solid white; // Added a visible 2px solid white border on hover
+  border: 1px solid white;                              // Added a visible 2px solid white border on hover
 
 }

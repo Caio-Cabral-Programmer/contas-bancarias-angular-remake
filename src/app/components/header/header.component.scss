@@ -1,36 +1,66 @@
 @use 'variables' as *;
+@use 'mixins' as *;
+
 
 header {
-  background-color: $primary-color; // Define a cor de fundo do cabeçalho como laranja avermelhado. É como pintar a caixa grande de laranja.
-  width: 100%; // Faz o cabeçalho ocupar 100% da largura da tela. Assim, ele vai de ponta a ponta.
-  height: 90px; // Define a altura do cabeçalho para 90 pixels. É como dizer que a caixa grande tem 90 "passinhos" de altura.
-  display: flex; // Transforma o cabeçalho em um contêiner flexível, permitindo organizar os itens filhos (imagem, texto, botão) de forma mais fácil. É como dar "super poderes" para a caixa organizar os brinquedos dentro dela.
-  align-items: center; // Centraliza os itens filhos verticalmente dentro do cabeçalho. Faz com que todos os brinquedos fiquem alinhados no meio, de cima para baixo.
-  justify-content: space-between; // Distribui o espaço entre os itens filhos, empurrando o primeiro item (imagem) para a esquerda, o último item (botão) para a direita e o item do meio (texto) para o centro. É como dizer para os brinquedos se espalharem e ocuparem o espaço disponível, com o primeiro indo para um lado, o último para o outro e o do meio ficando no meio.
+  background-color: $primary-color;
+  width: 100%;                                        // Faz o cabeçalho ocupar 100% da largura da tela. Assim, ele vai de ponta a ponta.
+  height: 90px;                                       // Define a altura do cabeçalho para 90 pixels.
+  display: flex;                                      // Transforma o cabeçalho em um contêiner flexível, permitindo organizar os itens filhos (imagem, texto, botão) de forma mais fácil.
+  align-items: center;                                // Centraliza os itens filhos verticalmente dentro do cabeçalho. Faz com que todos os brinquedos fiquem alinhados no meio, de cima para baixo.
+  justify-content: space-between;                     // Distribui o espaço entre os itens filhos, empurrando o primeiro item (imagem) para a esquerda, o último item (botão) para a direita e o item do meio (texto) para o centro. É como dizer para os brinquedos se espalharem e ocuparem o espaço disponível, com o primeiro indo para um lado, o último para o outro e o do meio ficando no meio.
+}
+
+.header-left {
+  display: flex;                                      // Transforma esta div em um contêiner flexível para alinhar a imagem e o texto.
+  align-items: center;                                // Centraliza a imagem e o texto verticalmente dentro desta div.
+  padding-left: 30px;                                 // Adiciona um espaço à esquerda para afastar os itens da borda do cabeçalho.
+}
+
+.header-right {
+  padding-right: 10px;                                // Adiciona um espaço à direita para afastar o botão da borda do cabeçalho.
 }
 
 header img {
-  width: 60px; // Define a largura da imagem para 60 pixels. Aumenta o tamanho do brinquedo da imagem para 60 "passinhos" de largura.
-  height: 60px; // Define a altura da imagem para 60 pixels. Mantém a altura igual à largura para a imagem não ficar esticada ou achatada.
-  margin-left: 40px; // Esta linha não é mais necessária porque o padding no header e o justify-content já cuidam do espaçamento.
+  width: 60px;                                         // Define a largura da imagem para 60 pixels. Aumenta o tamanho do brinquedo da imagem para 60 "passinhos" de largura.
+  height: 60px;                                        // Define a altura da imagem para 60 pixels. Mantém a altura igual à largura para a imagem não ficar esticada ou achatada.
+  margin-right: 20px;                                 // Adiciona um espaço à direita da imagem para separá-la do texto.
 }
 
 .header-text {
-  flex-grow: 1; // Faz esta div ocupar todo o espaço disponível entre a imagem e o botão. É como dizer para a caixinha de texto "crescer" e preencher o vazio no meio.
-  text-align: left; // Centraliza o texto (título e subtítulo) horizontalmente dentro desta div. Faz com que as palavras dentro da caixinha de texto fiquem alinhadas no centro.
-  margin: 0 20px; // Adiciona uma margem de 20 pixels nas laterais esquerda e direita desta div. Cria um espacinho entre a caixinha de texto e a imagem/botão.
+  text-align: left;                                     // Alinha o texto (título e subtítulo) à esquerda dentro desta div.
 }
 
 .header-text h1 {
-  margin: 0; // Remove a margem padrão que os títulos <h1> costumam ter. Ajuda a deixar o título mais perto do subtítulo.
-  font-size: 1.7em; // Define o tamanho da fonte do título. 1.5em significa 1.5 vezes o tamanho da fonte padrão.
-  color: white; // Define a cor do texto do título como branco.
+  margin: 0;                                             // Remove a margem padrão que os títulos <h1> costumam ter. Ajuda a deixar o título mais perto do subtítulo.
+  font-size: 1.7em;                                      // Define o tamanho da fonte do título. 1.5em significa 1.5 vezes o tamanho da fonte padrão.
+  color: white;                                        // Define a cor do texto do título como branco.
 }
 
 .header-text p {
-  margin: 0; // Remove a margem padrão que os parágrafos <p> costumam ter. Ajuda a deixar o subtítulo mais perto do título.
-  font-size: 1.1em; // Define o tamanho da fonte do subtítulo, um pouco menor que o título.
-  color: #eee; // Define a cor do texto do subtítulo como um cinza bem clarinho.
+  margin: 0;                                              // Remove a margem padrão que os parágrafos <p> costumam ter. Ajuda a deixar o subtítulo mais perto do título.
+  margin-right: 30px;
+  font-size: 1.1em;                                       // Define o tamanho da fonte do subtítulo, um pouco menor que o título.
+  color: #eee;                                           // Define a cor do texto do subtítulo como um cinza bem clarinho.
+}
+
+.by-caio-button {
+  @include base-button;
+  text-decoration: none;
+  font-family: 'Times New Roman';
+  font-size: 25px;
+  font-style: italic;
+  background-color: $primary-color;
+  color: white;
+  border: 1px solid white;
+  margin-left: auto; // Esta linha faz com que a margem esquerda do botão ocupe todo o espaço disponível à esquerda dele, empurrando-o para a direita.
+  margin-right: auto; // Esta linha faz com que a margem direita do botão ocupe todo o espaço disponível à direita dele, empurrando-o para a esquerda. Juntas, as duas margens automáticas centralizam o item no espaço restante.
+}
+
+.by-caio-button:hover {
+  background-color: #ffc847;
+  color: white;
+  border: none;
 }
 
 
