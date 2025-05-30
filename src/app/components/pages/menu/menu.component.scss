@@ -1,0 +1,21 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.menu-container {
+  @include page-container;
+}
+
+.menu-title {
+  @include title;
+}
+
+.menu-buttons-container {
+  display: flex;                                        // Necessário para tornar flexíveis os elementos div.
+  gap: 20px;
+}
+
+.menu-button {
+  border: 1px solid $primary-color;
+}
+
+

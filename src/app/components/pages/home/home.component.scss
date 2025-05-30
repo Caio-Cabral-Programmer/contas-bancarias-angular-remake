@@ -1,0 +1,18 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.home-container {
+  @include page-container
+}
+
+.start-button {
+  margin-top: 20px;
+  background-color: $primary-color;
+  color: white;
+  border: 1px solid white;
+}
+
+.start-button:hover {
+  background-color: #b24400;
+  color: white;
+}

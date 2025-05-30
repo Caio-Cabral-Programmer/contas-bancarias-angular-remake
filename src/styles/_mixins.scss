@@ -1,7 +1,6 @@
 @use 'variables' as *;
 // Botões
 @mixin base-button {
-  margin-right: 20px;
   padding: 15px 25px;                                                                                               // Adiciona um espaço interno (preenchimento) dentro do botão, em cima/embaixo (15px) e nas laterais (25px). Faz o botão parecer maior e mais fácil de clicar, como se estivéssemos enchendo ele com um "recheio" de espaço.
   background-color: white;                                                                                          // Define a cor de fundo do botão como branco. É como pintar o fundo do botão de branco para ele se destacar.
   color: $primary-color;                                                                                                 // Define a cor do texto do botão como laranja avermelhado. Faz as letras dentro do botão ficarem com a cor laranja avermelhado.
@@ -19,4 +18,25 @@
   color: #eee;
   border: 1px solid white;                              // Added a visible 2px solid white border on hover
 
+}
+
+@mixin title {
+  width: 100%;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: $primary-color;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o texto em telas menores */
+}
+
+@mixin page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;                              /* Isso centraliza o conteúdo verticalmente dentro do container */
+  height: 60vh;                                           /* Isso faz com que o container ocupe 60 vh (100vh seria toda a tela) da altura da tela, permitindo a centralização vertical */
 }
