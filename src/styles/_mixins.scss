@@ -95,3 +95,32 @@
   padding: 8px;
   font-size: 1.0em;
 }
+
+@mixin search-id {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: flex-end;
+}
+
+@mixin search-id-label {
+  color: #343a40;
+  font-weight: bold;
+  margin-right: -10px;
+  padding: 8px;
+}
+
+@mixin search-id-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+@mixin search-btn {
+  padding: 8px 20px;
+  font-size: 1.0em;
+
+}
