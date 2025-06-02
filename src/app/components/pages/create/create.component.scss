@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.create-container {
+  @include page-container;
+  height: 100vh;
+  width: 120%;
+}
+
+.create-title {
+  @include title-crud;
+}
+
+.create-form {
+  @include form;
+}
+
+.label-input-group {
+  @include label-input-group;
+}
+
+.label-input-group label {
+  @include label;                                                                   // Precisei mexer aqui para equilibrar com o weight da label.
+}
+
+.label-input-group input {
+  @include input;
+}
+
+.form-group {
+  @include form-group;
+}
+
+.save-button {
+  @include submit-button;
+
+}
+
