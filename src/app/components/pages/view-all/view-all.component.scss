@@ -31,12 +31,10 @@
 
 .user-details-header {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 10px;
-  background-color: #b8d0b8b0;
-  padding: 5px;
-  border-radius: 4px;
+
 
 }
 
@@ -49,10 +47,6 @@
 
 .user-details p {
   @include user-details-p;
-  padding: 10px;
-  background-color: #b8d0b8b0;
-  padding: 5px;
-  border-radius: 4px;
 }
 
 .loading-message {
