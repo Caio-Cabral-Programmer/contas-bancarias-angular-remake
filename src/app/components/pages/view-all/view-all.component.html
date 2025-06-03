@@ -1,0 +1,44 @@
+<div class="view-all-container">
+
+  <h2 class="view-all-title"> Visualizar Todos </h2>
+
+  <div class="view-all-form">
+
+    <div  class="loading-message">  <!-- *ngIf="loading"  --> <!-- Mensagem de carregamento que só aparece quando loading é true -->
+      Carregando usuários...  <!-- Texto que informa ao usuário que os dados estão sendo carregados -->
+    </div>
+
+    <div class="user-details"> <!-- *ngIf="user"  -->
+
+        <div class="user-details-header">
+
+          <h3> <strong> Nome </strong> - id. </h3> <!-- {{ user.name }} - id. {{ user.id }}-->
+
+        </div>
+
+        <div class="user-details-body">
+
+          <p><strong>Conta | Agência:</strong> </p> <!-- >{{ user.account.number }} | {{ user.account.agency }} -->
+          <p><strong>Saldo:</strong> </p> <!-- {{ user.account.balance | currency:'BRL' }} -->
+          <p><strong>Limite da Conta:</strong> </p> <!-- {{ user.account.limit | currency:'BRL' }} -->
+          <p><strong>Número do Cartão:</strong> </p> <!-- {{ user.card.number }} -->
+          <p><strong>Limite do Cartão:</strong> </p> <!-- {{ user.card.limit | currency:'BRL' }} -->
+
+        </div>
+
+    </div>
+
+    <div class="not-found-message"> Nenhum usuário cadastrado! </div><!-- *ngIf="!user"  -->
+
+  </div>
+</div>
+
+
+
+<!-- Ele usa vários recursos poderosos do Angular, como:
+
+- Diretivas estruturais ( *ngIf ): Para mostrar ou esconder elementos com base em condições
+- Interpolação ( {{ }} ): Para mostrar valores das variáveis do componente
+- Event binding ( (click) , (keyup.enter) ): Para chamar métodos quando eventos acontecem
+- Two-way binding ( [(ngModel)] ): Para sincronizar o valor do input com a variável do componente
+- Pipes ( currency:'BRL' ): Para formatar valores como moeda brasileira -->

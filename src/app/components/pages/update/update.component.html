@@ -1,0 +1,102 @@
+<div class="update-container">
+
+  <h2 class="update-title"> Atualizar </h2>
+
+  <form class="update-form"> <!-- [formGroup]="userForm" (ngSubmit)="onSubmit()"  -->
+
+    <div class="search-id">
+
+      <label for="userId">ID do Usuário:</label>
+      <input type="number" id="userId" > <!-- [(ngModel)]="userId" (keyup.enter)="searchUser()" -->
+      <button class="search-btn" >Buscar</button> <!-- (click)="searchUser()" -->
+
+    </div>
+
+    <div class="user-details"> <!-- *ngIf="user"  -->
+
+      <div class="form-group">
+        <div class="label-input-group">
+          <label for="name">Nome do Usuário:</label>
+          <input type="text" id="name" formControlName="name" required>
+        </div>
+      </div>
+
+        <div formGroupName="account" class="form-group">
+
+          <div class="label-input-group">
+            <label for="accountNumber">Número da Conta:</label>
+            <input type="number" id="accountNumber" formControlName="number" required>
+          </div>
+
+          <div class="label-input-group">
+            <label for="accountAgency">Número da Agência:</label>
+            <input type="number" id="accountAgency" formControlName="agency" required>
+          </div>
+
+          <div class="label-input-group">
+            <label for="accountBalance">Saldo:</label>
+            <input type="number" id="accountBalance" formControlName="balance" required>
+          </div>
+
+          <div class="label-input-group">
+            <label for="accountLimit">Limite da Conta:</label>
+            <input type="number" id="accountLimit" formControlName="limit" required>
+          </div>
+        </div>
+
+        <div formGroupName="card" class="form-group">
+
+          <div class="label-input-group">
+            <label for="cardNumber">Número do Cartão:</label>
+            <input type="number" id="cardNumber" formControlName="number" required>
+          </div>
+
+          <div class="label-input-group">
+            <label for="cardLimit">Limite do Cartão:</label>
+            <input type="number" id="cardLimit" formControlName="limit" required>
+          </div>
+        </div>
+
+        <div class="confirmation"> <!-- *ngIf="showConfirmation"  -->
+
+          <div class="confirmation-message">Deseja realmente atualizar?</div>
+
+          <div class="confirmation-buttons">
+            <button class="confirm-btn" >Sim</button> <!-- (click)="confirmDelete()" -->
+            <button class="cancel-btn" >Não</button> <!-- (click)="cancelDelete()" -->
+
+          </div>
+        </div>
+
+    </div>
+
+    <button type="submit" class="save-button" > Atualizar e Salvar </button> <!-- [disabled]="!userForm.valid" -->
+
+    <div  class="error-message"> </div> <!-- *ngIf="errorMessage" {{ errorMessage }} -->
+
+    <div  class="success-message"> </div> <!-- *ngIf="successMessage" {{ successMessage }} -->
+
+  </form>
+
+  <div class="form-actions">
+
+  </div>
+
+</div>
+
+
+
+<!-- Este arquivo é super importante porque:
+
+1. Cria a interface de criação de usuários : Ele define toda a estrutura visual da página onde novos usuários são criados. É como o desenho de uma casa antes de construí-la!
+2. Usa formulários reativos do Angular : Ele usa a abordagem de formulários reativos ( [formGroup] , formControlName , formGroupName ), que é mais poderosa e flexível que os formulários baseados em template. É como ter um formulário inteligente que sabe quando algo está errado!
+3. Organiza os dados em seções lógicas : Ele agrupa os campos em seções (informações básicas, conta e cartão), tornando o formulário mais organizado e fácil de entender. É como organizar seus brinquedos em diferentes caixas!
+4. Valida os dados de entrada : Ele marca todos os campos como obrigatórios ( required ) e usa validação do Angular para garantir que todos os campos sejam preenchidos. É como um professor que verifica se você fez toda a lição de casa!
+5. Mostra feedback ao usuário : Ele tem áreas específicas para mostrar mensagens de sucesso e erro. É como um amigo que sempre te conta o que está acontecendo!
+6. Usa recursos do Angular : Ele usa vários recursos poderosos do Angular, como:
+
+   - Diretivas estruturais ( *ngIf ): Para mostrar ou esconder elementos com base em condições
+   - Interpolação ( {{ }} ): Para mostrar valores das variáveis do componente
+   - Property binding ( [formGroup] , [disabled] ): Para vincular propriedades HTML a expressões do componente
+7. Tem uma navegação clara : Ele tem botões para salvar o novo usuário ou voltar ao menu principal, facilitando a navegação. É como ter um mapa que sempre te mostra o caminho!
+8. Previne envios inválidos : Ele desabilita o botão de envio quando o formulário é inválido, evitando que o usuário envie dados incompletos. É como um guarda que só deixa você passar quando tudo está certo! -->

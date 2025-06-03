@@ -1,0 +1,68 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.view-all-container {
+  @include page-container;
+  height: 100vh;
+}
+
+.view-all-title {
+  @include title-crud;
+}
+
+.view-all-form {
+  @include form;
+}
+
+.label-input-group {
+  @include label-input-group;
+}
+
+.label-input-group label {
+  @include label;
+}
+
+.user-details {
+  @include user-details;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.user-details-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #b8d0b8b0;
+  padding: 5px;
+  border-radius: 4px;
+
+}
+
+.user-details-body {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+}
+
+.user-details p {
+  @include user-details-p;
+  padding: 10px;
+  background-color: #b8d0b8b0;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.loading-message {
+  @include not-found-message;
+  background-color: #42a1e170;
+  color: #002575;
+}
+
+.not-found-message {
+  @include not-found-message
+}
+
+

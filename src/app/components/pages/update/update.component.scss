@@ -1,16 +1,17 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-.delete-container {
+.update-container {
   @include page-container;
   height: 120vh;
+  width: 120%;
 }
 
-.delete-title {
+.update-title {
   @include title-crud;
 }
 
-.delete-form {
+.update-form {
   @include form;
 }
 
@@ -19,7 +20,20 @@
 }
 
 .label-input-group label {
-  @include label;
+  @include label;                                                                   // Precisei mexer aqui para equilibrar com o weight da label.
+}
+
+.label-input-group input {
+  @include input;
+}
+
+.form-group {
+  @include form-group;
+}
+
+.save-button {
+  @include submit-button;
+
 }
 
 .search-id {
@@ -36,18 +50,6 @@
 
 .search-btn {
   @include search-btn
-}
-
-.user-details {
-  @include user-details
-}
-
-.user-details p {
-  @include user-details-p
-}
-
-.not-found-message {
-  @include not-found-message
 }
 
 .confirmation {
@@ -82,7 +84,3 @@
   @include submit-button;
 
 }
-
-
-
-
