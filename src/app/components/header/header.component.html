@@ -1,14 +1,13 @@
 <header>
   <div class="header-left">
-    <img src="icon-money.svg" alt="Home">
+    <img src="icon-money.svg" alt="Home" (click)="goToHome()">
     <div class="header-text">
-      <h1> Decola Tech 2025 </h1>
-      <p> Avanade-DIO | Contas Bancárias </p>
+      <h1 (click)="goToHome()"> Decola Tech 2025 </h1>
+      <p (click)="goToHome()"> Avanade-DIO | Contas Bancárias </p>
     </div>
     <a href="https://www.linkedin.com/in/caio-cabral-programmer/" target="_blank" class="by-caio-button"> by Caio Cabral </a>
   </div>
   <div class="header-right">
-    <button class="menu-button"> Menu </button>
+    <button class="menu-button" (click)="goToMenu()"> Menu </button>
   </div>
 </header>
-<!-- FIXME: Colocar colocar link para a img (ir para home) -->

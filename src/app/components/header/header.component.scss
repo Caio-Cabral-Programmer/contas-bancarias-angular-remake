@@ -25,6 +25,7 @@ header img {
   width: 60px;                                         // Define a largura da imagem para 60 pixels. Aumenta o tamanho do brinquedo da imagem para 60 "passinhos" de largura.
   height: 60px;                                        // Define a altura da imagem para 60 pixels. Mantém a altura igual à largura para a imagem não ficar esticada ou achatada.
   margin-right: 20px;                                 // Adiciona um espaço à direita da imagem para separá-la do texto.
+  cursor: pointer;
 }
 
 .header-text {
@@ -35,6 +36,7 @@ header img {
   margin: 0;                                             // Remove a margem padrão que os títulos <h1> costumam ter. Ajuda a deixar o título mais perto do subtítulo.
   font-size: 1.7em;                                      // Define o tamanho da fonte do título. 1.5em significa 1.5 vezes o tamanho da fonte padrão.
   color: white;                                        // Define a cor do texto do título como branco.
+  cursor: pointer;
 }
 
 .header-text p {
@@ -42,6 +44,7 @@ header img {
   margin-right: 30px;
   font-size: 1.1em;                                       // Define o tamanho da fonte do subtítulo, um pouco menor que o título.
   color: #eee;                                           // Define a cor do texto do subtítulo como um cinza bem clarinho.
+  cursor: pointer;
 }
 
 .by-caio-button {
