@@ -2,7 +2,7 @@
 @use 'mixins' as *;
 
 .home-container {
-  @include page-container
+  @include page-container;
 }
 
 .start-button {

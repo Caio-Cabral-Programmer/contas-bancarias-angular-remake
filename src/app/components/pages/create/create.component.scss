@@ -3,8 +3,7 @@
 
 .create-container {
   @include page-container;
-  height: 100vh;
-  width: 120%;
+  width: 500px;                                                               // Antes estava usando % em vez px para ajustar a largura e, portanto, estava ficando descentralizado. Agora com px ele cresceu e permaneceu alinhado.
 }
 
 .create-title {

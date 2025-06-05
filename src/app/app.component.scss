@@ -1,14 +1,27 @@
 .app-container {
-  display: flex;                                                                        /* Transforma em um contêiner Flexbox */
-  flex-direction: column;                                                               /* Coloca os itens (header, main, footer) um embaixo do outro */
-  min-height: 100vh;                                                                    /* Garante que o contêiner tenha NO MÍNIMO a altura total da viewport */
-                                                                                        // 100vh significa 100% da "viewport height" (altura visível da tela)
-}
-
-.app-main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;                                                                         // Esta parte diz: "Cresça e ocupe todo o espaço extra disponível   /* Se houver espaço extra, ele pega. Se não houver, ele continua no tamanho normal */
+  min-height: 100vh                                                                     // Diz ao contêiner para ter NO MÍNIMO a altura total da tela visível. Se o conteúdo for menor que a tela, ele preenche a tela. Se o conteúdo for maior, ele cresce além de 100vh.
+}
+
+app-header {
+  position: fixed;                                                                      /* Cola o header na tela */
+  top: 0;                                                                               /* Fixa no topo da tela */
+  width: 100%;                                                                          /* Ocupa toda a largura da tela */
+}
+
+app-footer {
+  position: relative;
+  bottom: 0;                                                                            /* Fixa na parte de baixo da tela */
+  width: 100%;                                                                          /* Ocupa toda a largura da tela */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;                                                                         // Diz para o main: "Cresça e ocupe TODO o espaço restante disponível! Se o espaço for menor que 100vh, ele cresce para empurrar o footer para baixo. Se o conteúdo do main for grande, ele cresce normalmente, empurrando o footer
 }
