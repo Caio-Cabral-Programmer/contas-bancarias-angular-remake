@@ -18,7 +18,6 @@ import { ApiService } from '../../../services/api.service';
 })
 
 export class CreateComponent implements OnInit{
-
   userForm!: FormGroup;                                                                                   // objeto que receberá os valores do formulário reativo. " ! " indica inicialização posterior, ou seja, ele receberá os valores depois, não nesta linha de código.
   successMessage!: string;
   errorMessage!: string;
@@ -33,7 +32,6 @@ export class CreateComponent implements OnInit{
   }
 
   initForm(): void {
-
     this.userForm = new FormGroup({                                                                       // Significa que o que for escrito nos inputs do formulário HTML será armazenado no objeto userForm. Ele usa a abordagem de formulários reativos, sendo possível graças a importação do ReactiveFormsModule.
       name: new FormControl('', Validators.required),
       account: new FormGroup({
@@ -51,7 +49,6 @@ export class CreateComponent implements OnInit{
   }
 
   onSubmit(): void {
-
     if (this.userForm.valid) {
       const user: User = this.userForm.value;
       this.apiService.createUser(user).subscribe({                                                                          // .subscribe() → é um método necessário por que o resultado do método .createUser(user) é um Observable <User>, ou seja, ele não vem na hora que é chamado, pois depende da resposta da API, então o método .subscribe() fica tipo na escuta, esperando atento a chegada da resposta da API.
@@ -62,7 +59,6 @@ export class CreateComponent implements OnInit{
           }, 2000);
         },
         error: (error) => {                                                                                                 // Função chamada quando ocorre um erro
-
           if (error.error && typeof error.error === 'string') {                                                             // Verifica o tipo de erro baseado na resposta da API tem uma propriedade error que é uma string
             if (error.error.includes('conta') || error.error.toLowerCase().includes('account')) {                           // Verifica se na mensagem de erro tem a palavra conta ou account.
               this.errorMessage = 'Número de conta já existe!';

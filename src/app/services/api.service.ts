@@ -16,6 +16,14 @@ export class ApiService {
     return this.http.post<User>(this.apiUrl, user);
   }
 
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
+  }
+
+  deleteUser(id: number): Observable<void> {                                                                     // Método que recebe um ID e retorna um Observable vazio após a exclusão
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
 }
 
 

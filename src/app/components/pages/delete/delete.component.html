@@ -7,42 +7,45 @@
       <div class="search-id">
 
         <label for="userId">ID do Usuário:</label>
-        <input type="number" id="userId" > <!-- [(ngModel)]="userId" (keyup.enter)="searchUser()" -->
-        <button class="search-btn" >Buscar</button> <!-- (click)="searchUser()" -->
+        <input type="number" id="userIdToSearch" [(ngModel)]="userIdToSearch" (keyup.enter)="searchUser()" >
+        <button class="search-btn" (click)="searchUser()" >Buscar</button>
 
       </div>
 
-      <div class="user-details"> <!-- *ngIf="user"  -->
+      <div class="user-details" *ngIf="user">
 
-        <p><strong>Nome:</strong> </p> <!-- {{ user.name }} -->
-        <p><strong>Número da Conta:</strong> </p> <!-- {{ user.account.number }} -->
-        <p><strong>Número da Agência:</strong> </p> <!-- {{ user.account.agency }} -->
-        <p><strong>Saldo:</strong> </p> <!-- {{ user.account.balance | currency:'BRL' }} -->
-        <p><strong>Limite da Conta:</strong> </p> <!-- {{ user.account.limit | currency:'BRL' }} -->
-        <p><strong>Número do Cartão:</strong> </p> <!-- {{ user.card.number }} -->
-        <p><strong>Limite do Cartão:</strong> </p> <!-- {{ user.card.limit | currency:'BRL' }} -->
+        <p><strong> Nome: </strong> {{ user.name }} </p>
+        <p><strong> Número da Conta: </strong> {{ user.account.number }} </p>
+        <p><strong> Número da Agência: </strong> {{ user.account.agency }} </p>
+        <p><strong> Saldo: </strong> {{ user.account.balance | currency:'BRL' }} </p>
+        <p><strong> Limite da Conta: {{ user.account.limit | currency:'BRL' }} </strong> </p>
+        <p><strong> Número do Cartão: </strong> {{ user.card.number }} </p>
+        <p><strong> Limite do Cartão: {{ user.card.limit | currency:'BRL' }} </strong> </p>
 
-        <div class="confirmation"> <!-- *ngIf="showConfirmation"  -->
+        <div class="confirmation" *ngIf="showConfirmation">
 
-          <div class="confirmation-message">Deseja realmente deletar?</div>
+          <div class="confirmation-message"> Deseja realmente deletar? </div>
 
           <div class="confirmation-buttons">
-            <button class="confirm-btn" >Sim</button> <!-- (click)="confirmDelete()" -->
-            <button class="cancel-btn" >Não</button> <!-- (click)="cancelDelete()" -->
+            <button class="confirm-btn" (click)="confirmDelete()"> Sim </button>
+            <button class="cancel-btn" (click)="cancelDelete()"> Não </button>
 
           </div>
+
         </div>
+
       </div>
 
-      <button class="delete-button" >Deletar Usuário</button> <!-- *ngIf="user && !showConfirmation"  (click)="showDeleteConfirmation()" -->
+      <button class="delete-button" *ngIf="user" (click)="showDeleteConfirmation()"> Deletar Usuário </button>
 
-      <div class="error-message"> </div> <!-- *ngIf="errorMessage"  {{ errorMessage }} -->
+      <div class="error-message" *ngIf="errorMessage"> {{ errorMessage }} </div>
 
-      <div class="not-found-message"> Usuário não encontrado! </div><!-- *ngIf="!user && searched && !successMessage"  -->
+      <div class="not-found-message" *ngIf="searched && !user"> Usuário não encontrado! </div>
 
-      <div class="success-message"> </div> <!-- *ngIf="successMessage"  {{ successMessage }} -->
+      <div class="success-message" *ngIf="successMessage"> {{ successMessage }} </div> 
 
     </div>
+
   </div>
 
 
