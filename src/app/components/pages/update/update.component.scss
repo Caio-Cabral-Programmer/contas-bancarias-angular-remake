@@ -32,7 +32,10 @@
 
 .save-button {
   @include submit-button;
+}
 
+.save-button:disabled {
+  cursor: not-allowed;
 }
 
 .search-id {
@@ -82,4 +85,8 @@
 .delete-button {
   @include submit-button;
 
+}
+
+.not-found-message {
+  @include not-found-message
 }

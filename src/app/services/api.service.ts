@@ -24,6 +24,10 @@ export class ApiService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
+  updateUser(id: number, user: User): Observable<User> {                                                         // Método que recebe um ID e um objeto User e retorna um Observable com o usuário atualizado
+    return this.http.put<User>(`${this.apiUrl}/${id}`, user);                                                    // Faz uma requisição PUT para atualizar um usuário existente no servidor
+  }
+
 }
 
 

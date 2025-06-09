@@ -45,7 +45,7 @@ export class DeleteComponent {
 
   showDeleteConfirmation(): void {
     if (this.userIdToSearch === 1) {                                                                                  // Verifica se o ID do usuário é 1 (protegido contra exclusão)
-      this.errorMessage = 'O usuário com ID 1 não pode ser excluído! Os demais podem ser excluídos.';
+      this.errorMessage = 'O usuário com ID 1 não pode ser excluído!';
     } else { this.showConfirmation = true; }
   }
 

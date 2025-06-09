@@ -32,6 +32,9 @@
 
 .save-button {
   @include submit-button;
+}
 
+.save-button:disabled {
+  cursor: not-allowed;
 }
 
