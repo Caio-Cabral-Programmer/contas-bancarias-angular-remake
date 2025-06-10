@@ -24,7 +24,6 @@
   width: 100%;
   font-size: 2rem;
   color: white;
-  margin-bottom: 20px;
   padding: 10px 20px;
   background-color: $primary-color;
   border-radius: 5px;
@@ -35,7 +34,6 @@
 @mixin title-crud {
   @include title;
   padding: 5px 20px;
-  margin-bottom: 10px;
   font-size: 1.6rem;
 }
 
@@ -46,6 +44,7 @@
   justify-content: center;
   margin-top: 120px;
   margin-bottom: 40px;
+  gap: 10px;
 }
 
 @mixin form {
@@ -91,7 +90,6 @@
 }
 
 @mixin submit-button {
-  margin-top: 10px;
   padding: 8px;
   font-size: 1.0em;
   width: 100%;
@@ -102,7 +100,6 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
   align-items: flex-end;
   background-color: #e6f2e6b0;
   padding: 20px;
@@ -197,7 +194,6 @@
 }
 
 @mixin error-message {
-  margin-top: 10px;
   padding: 20px;
   background-color: #f8d7da;
   color: #721c24;
@@ -208,7 +204,6 @@
   width: 100%;
 }
 @mixin success-message {
-  margin-top: 10px;
   padding: 20px;
   background-color: #42a1e170;
   color: #002575;

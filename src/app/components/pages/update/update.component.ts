@@ -51,7 +51,7 @@ export class UpdateComponent implements OnInit{
   }
 
   searchUser(): void {
-
+    this.errorMessage = '';
     this.user = null;
 
     if (this.userIdToSearch) {
@@ -99,7 +99,7 @@ export class UpdateComponent implements OnInit{
   }
 
   onSubmit(): void {
-    if (this.userForm.valid) { // FIXME: Depois que tudo estiver funcionando perfeitamente, tentar fazer essa operação abaixo sem essa variável formValue, passando is.userForm.value direto para updateUser. Também tentar eliminar as variáveis this.userId, this.accountId e this.cardId para ver se ainda funciona.
+    if (this.userForm.valid) { // FIXME: Depois que tudo estiver funcionando perfeitamente, tentar fazer essa operação abaixo sem essa variável formValue, passando this.userForm.value direto para updateUser.
 
       const formValue = this.userForm.value;                                                                                 // Variável formValue necessária para receber os valores do objeto userForm, pois não estava funcionando passar os valores de userForm direto para a variável updatedUser.
 

@@ -13,8 +13,7 @@ import { User } from '../../../models/user';
 })
 export class ViewComponent {
   userIdToSearch!: number;
-  searched: boolean = false;
-  user!: User
+  user: User | null = null;
   errorMessage!: string;
 
 
@@ -23,7 +22,8 @@ export class ViewComponent {
   ) { }
 
   searchUser(): void {
-    this.searched = true;
+    this.errorMessage = '';
+    this.user = null;
 
     if (this.userIdToSearch) {
       this.apiService.getUserById(this.userIdToSearch).subscribe({

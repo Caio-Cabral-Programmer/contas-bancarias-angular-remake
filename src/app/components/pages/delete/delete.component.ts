@@ -14,7 +14,7 @@ import { User } from '../../../models/user';
 })
 export class DeleteComponent {
   userIdToSearch!: number;
-  user!: User
+  user: User | null = null;
   showConfirmation: boolean = false;
   errorMessage!: string;
   successMessage!: string;
@@ -25,6 +25,8 @@ export class DeleteComponent {
   ) { }
 
   searchUser(): void {
+    this.errorMessage = '';
+    this.user = null;
 
     if (this.userIdToSearch) {
       this.apiService.getUserById(this.userIdToSearch).subscribe({
