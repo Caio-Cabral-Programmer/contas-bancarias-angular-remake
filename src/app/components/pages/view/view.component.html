@@ -2,17 +2,17 @@
 
     <h2 class="view-title"> Visualizar </h2>
 
-    <div class="view-form">
+    <div class="search-id">
 
-      <div class="search-id">
+      <label for="userIdToSearch"> ID do Usuário: </label>
+      <input type="number" id="userIdToSearch" [(ngModel)]="userIdToSearch" (keyup.enter)="searchUser()">
+      <button class="search-btn" (click)="searchUser()"> Buscar </button>
 
-        <label for="userId"> ID do Usuário: </label>
-        <input type="number" id="userIdToSearch" [(ngModel)]="userIdToSearch" (keyup.enter)="searchUser()">
-        <button class="search-btn" (click)="searchUser()"> Buscar </button>
+    </div>
 
-      </div>
+    <div class="view-form" *ngIf="user">
 
-      <div class="user-details" *ngIf="user">
+      <div class="user-details" >
 
         <p><strong>Nome:</strong> {{ user.name }} </p>
         <p><strong>Número da Conta:</strong> {{ user.account.number }} </p>
@@ -24,9 +24,10 @@
 
       </div>
 
-      <div class="not-found-message" *ngIf="!user && searched"> Usuário não encontrado! </div>
-
     </div>
+
+    <div class="error-message" *ngIf="errorMessage"> {{ errorMessage }} </div>
+
   </div>
 
 

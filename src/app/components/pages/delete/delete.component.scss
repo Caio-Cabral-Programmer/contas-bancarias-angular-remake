@@ -45,10 +45,6 @@
   @include user-details-p
 }
 
-.not-found-message {
-  @include not-found-message
-}
-
 .confirmation {
   @include confirmation
 }
@@ -79,7 +75,14 @@
 
 .delete-button {
   @include submit-button;
+}
 
+.error-message {
+  @include error-message
+}
+
+.success-message {
+  @include success-message
 }
 
 

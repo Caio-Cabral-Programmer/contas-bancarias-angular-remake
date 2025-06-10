@@ -45,6 +45,6 @@
   @include user-details-p
 }
 
-.not-found-message {
-  @include not-found-message
+.error-message {
+  @include error-message
 }

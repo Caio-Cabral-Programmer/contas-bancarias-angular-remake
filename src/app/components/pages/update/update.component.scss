@@ -39,7 +39,7 @@
 }
 
 .search-id {
-  @include search-id
+  @include search-id;
 }
 
 .search-id label {
@@ -87,6 +87,10 @@
 
 }
 
-.not-found-message {
-  @include not-found-message
+.error-message {
+  @include error-message
+}
+
+.success-message {
+  @include success-message
 }

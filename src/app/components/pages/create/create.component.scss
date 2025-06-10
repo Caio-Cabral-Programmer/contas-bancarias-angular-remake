@@ -38,3 +38,11 @@
   cursor: not-allowed;
 }
 
+.error-message {
+  @include error-message
+}
+
+.success-message {
+  @include success-message
+}
+

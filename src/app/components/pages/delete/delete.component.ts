@@ -14,7 +14,6 @@ import { User } from '../../../models/user';
 })
 export class DeleteComponent {
   userIdToSearch!: number;
-  searched: boolean = false;
   user!: User
   showConfirmation: boolean = false;
   errorMessage!: string;
@@ -26,7 +25,6 @@ export class DeleteComponent {
   ) { }
 
   searchUser(): void {
-    this.searched = true;                                                                                        // Booleano que marca que a busca foi feita. Ele é importante para poder mostrar uma mensagem que o usuário não foi encontrado.
 
     if (this.userIdToSearch) {
       this.apiService.getUserById(this.userIdToSearch).subscribe({
@@ -35,6 +33,7 @@ export class DeleteComponent {
         },
         error: (error: any) => {
           console.error('Erro ao carregar usuário!', error);
+          this.errorMessage = 'Usuário não encontrado!';
         }
 
       });

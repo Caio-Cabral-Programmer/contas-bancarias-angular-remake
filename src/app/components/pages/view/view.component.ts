@@ -15,6 +15,8 @@ export class ViewComponent {
   userIdToSearch!: number;
   searched: boolean = false;
   user!: User
+  errorMessage!: string;
+
 
   constructor(
     private apiService: ApiService,
@@ -30,6 +32,7 @@ export class ViewComponent {
         },
         error: (error: any) => {
           console.error('Erro ao carregar usuário!', error);
+          this.errorMessage = 'Usuário não encontrado!';
         }
 
       });

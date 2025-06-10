@@ -14,8 +14,7 @@ import { User } from '../../../models/user';
 })
 export class UpdateComponent implements OnInit{
   userIdToSearch!: number;
-  searched: boolean = false;
-  user!: User
+  user: User | null = null;
   userForm!: FormGroup;                                                                                                   // objeto que receberá os valores do formulário reativo. " ! " indica inicialização posterior, ou seja, ele receberá os valores depois, não nesta linha de código.
   errorMessage!: string;
   successMessage!: string;
@@ -53,7 +52,8 @@ export class UpdateComponent implements OnInit{
   }
 
   searchUser(): void {
-    this.searched = true;                                                                                                  // Booleano que marca que a busca foi feita. Ele é importante para poder mostrar uma mensagem que o usuário não foi encontrado.
+
+    this.user = null;
 
     if (this.userIdToSearch) {
       this.apiService.getUserById(this.userIdToSearch).subscribe({
@@ -64,7 +64,7 @@ export class UpdateComponent implements OnInit{
           this.cardId = user.card?.id || null;                                                                             // Passa o valor do ID do cartão que vem da API para a variável cardId. Será utilizado para fazer o PUT para a API.
 
           const formattedUser = {                                                                                          // Variável importante que recebe todos os dados do usuário que veio da API.
-            id: user.id,
+            id: user.id || this.userIdToSearch,
             name: user.name || '',
             account: {
               id: user.account?.id || null,  // Usa o ID da conta
@@ -85,6 +85,7 @@ export class UpdateComponent implements OnInit{
         },
         error: (error: any) => {
           console.error('Erro ao carregar usuário!', error);
+          this.errorMessage = 'Usuário não encontrado!';
         }
 
       });
@@ -104,8 +105,8 @@ export class UpdateComponent implements OnInit{
 
       const formValue = this.userForm.value;                                                                                 // Variável formValue necessária para receber os valores do objeto userForm, pois não estava funcionando passar os valores de userForm direto para a variável updatedUser.
 
-      const updatedUser: User = {
-        id: formValue.user.id || this.userId,                                                                                // Aqui estamos criando um objeto User (updatedUser) com a estrutura correta com todos os IDs para que o JSON enviado para API contenha todos os IDs para que o update ocorra com sucesso. O formulário não inclue os IDs, por isso precisamos incluí-los manualmente.
+      const updatedUser: User = {                                                                                            // Aqui estamos criando um objeto User (updatedUser) com a estrutura correta com todos os IDs para que o JSON enviado para API contenha todos os IDs para que o update ocorra com sucesso. O formulário não inclue os IDs, por isso precisamos incluí-los manualmente.
+        id: this.userIdToSearch,                                                                                             // Precisei usar esta variável this.userIdToSearch porque o TS não estava reconhecendo o ID do usuário da API, ou seja user.id estava vindo como NULL.
         name: formValue.name,
         account: {
           id: formValue.account.id || this.accountId,                                                                        // O que estava acontecendo: O ID do userToUpdate da API estava indo como NULL (sendo portanto, diferente do ID do usuário do Banco de dados) e os números da conta e do cartão estavam acusando como se já existissem no banco de dados.

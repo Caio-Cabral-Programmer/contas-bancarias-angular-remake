@@ -49,13 +49,11 @@
 }
 
 .loading-message {
-  @include not-found-message;
-  background-color: #42a1e170;
-  color: #002575;
+  @include success-message;
 }
 
-.not-found-message {
-  @include not-found-message
+.error-message {
+  @include error-message
 }
 
 

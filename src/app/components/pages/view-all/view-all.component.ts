@@ -13,7 +13,8 @@ import { User } from '../../../models/user';
 export class ViewAllComponent implements OnInit{
   users: User[] = [];                                                                                                   // Propriedade para armazenar a lista de usuários que virá da API. Ela começa vazia.
   loading: boolean = false;                                                                                         // Propriedade que controlará a visualização do aviso de carregamento. Começa como false (não está carregando).
-  showNotFound: boolean = false;                                                                                    // Propriedade que controlará a visualização do aviso de not-found. Começa como false e só fica true quando não houver usuários (error).
+  errorMessage!: string;
+
 
   constructor(
     private apiService: ApiService,
@@ -31,15 +32,12 @@ export class ViewAllComponent implements OnInit{
         setTimeout(() => {                                                                                          // Define um temporizador para realizar as ações seguintes após 2 segundos.
           this.loading = false;                                                                                     // Define loading como false para esconder o indicador de carregamento
           this.users = users;                                                                                       // Armazena a lista de usuários recebida na propriedade users desta classe.
-          if (this.users.length === 0) {
-            this.showNotFound = true;
-          }
         }, 2000);
       },
       error: (error: any) => {
         console.error('Erro ao carregar usuários', error);
         this.loading = false;
-        this.showNotFound = true;
+        this.errorMessage = 'Nenhum usuário cadastrado!';
       }
     });
   }

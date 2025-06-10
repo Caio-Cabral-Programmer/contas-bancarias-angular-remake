@@ -44,7 +44,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: fit-content;                                                                 // FIXME: Necessário? /* Isso centraliza o conteúdo verticalmente dentro do container */
   margin-top: 120px;
   margin-bottom: 40px;
 }
@@ -92,9 +91,10 @@
 }
 
 @mixin submit-button {
-  margin-top: 5px;
+  margin-top: 10px;
   padding: 8px;
   font-size: 1.0em;
+  width: 100%;
 }
 
 @mixin search-id {
@@ -104,6 +104,11 @@
   gap: 10px;
   margin-bottom: 20px;
   align-items: flex-end;
+  background-color: #e6f2e6b0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 @mixin search-id-label {
@@ -191,7 +196,7 @@
   margin: 8px 0;
 }
 
-@mixin not-found-message {
+@mixin error-message {
   padding: 20px;
   background-color: #f8d7da;
   color: #721c24;
@@ -199,4 +204,15 @@
   text-align: center;
   font-weight: bold;
   font-size: large;
+  width: 100%;
+}
+@mixin success-message {
+  padding: 20px;
+  background-color: #42a1e170;
+  color: #002575;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  width: 100%;
 }
