@@ -2,47 +2,47 @@
 
   <h2 class="view-all-title"> Visualizar Todos </h2>
 
-  <div class="view-all-form">
+  <div  class="loading-message" *ngIf="loading">                                                                  <!-- Mensagem de carregamento que só aparece quando loading é true -->
+    Carregando usuários...                                                                                        <!-- Texto que informa ao usuário que os dados estão sendo carregados -->
+  </div>
 
-    <div  class="loading-message">  <!-- *ngIf="loading"  --> <!-- Mensagem de carregamento que só aparece quando loading é true -->
-      Carregando usuários...  <!-- Texto que informa ao usuário que os dados estão sendo carregados -->
+  <div class="view-all-form" *ngIf="users.length > 0">
+
+    <div class="user-details" *ngFor="let user of users">
+
+      <div class="user-details-header">
+
+        <h3> <strong> {{ user.name }} </strong> </h3>
+        <p> - id. {{ user.id }}  </p>
+
+      </div>
+
+      <div class="user-details-body">
+
+        <p> <strong> Conta: </strong> {{ user.account.number }} </p>
+        <p> <strong> | </strong> </p>
+        <p> <strong> Agência: </strong> {{ user.account.number }} | {{ user.account.agency }} </p>
+        <p> <strong> | </strong> </p>
+        <p> <strong> Saldo: </strong> {{ user.account.balance | currency:'BRL' }} </p>
+        <p> <strong> | </strong> </p>
+        <p> <strong> Limite da Conta: </strong> {{ user.account.limit | currency:'BRL' }} </p>
+        <p> <strong> | </strong> </p>
+        <p> <strong> Número do Cartão: </strong> {{ user.card.number }} </p>
+        <p> <strong> | </strong> </p>
+        <p> <strong> Limite do Cartão: </strong> {{ user.card.limit | currency:'BRL' }} </p>
+
+      </div>
+
     </div>
 
-    <div class="user-details"> <!-- *ngIf="user"  -->
-
-        <div class="user-details-header">
-
-          <h3> <strong> Caio Cabral </strong> </h3> <!-- {{ user.name }} - id. {{ user.id }}-->
-          <p> id. 1  </p>
-
-        </div>
-
-        <div class="user-details-body">
-
-          <p><strong> Conta: </strong> </p> <!-- >{{ user.account.number }}-->
-          <p><strong> | </strong> </p>
-          <p><strong> Agência: </strong> </p> <!-- >{{ user.account.number }} | {{ user.account.agency }} -->
-          <p><strong> | </strong> </p>
-          <p><strong> Saldo: </strong> </p> <!-- {{ user.account.balance | currency:'BRL' }} -->
-          <p><strong> | </strong> </p>
-          <p><strong> Limite da Conta: </strong> </p> <!-- {{ user.account.limit | currency:'BRL' }} -->
-          <p><strong> | </strong> </p>
-          <p><strong> Número do Cartão: </strong> </p> <!-- {{ user.card.number }} -->
-          <p><strong> | </strong> </p>
-          <p><strong> Limite do Cartão: </strong> </p> <!-- {{ user.card.limit | currency:'BRL' }} -->
-
-        </div>
-
-    </div>
-
-    <div class="not-found-message"> Nenhum usuário cadastrado! </div><!-- *ngIf="!user"  -->
+    <div class="not-found-message" *ngIf="!users && searched"> Nenhum usuário cadastrado! </div>
 
   </div>
 </div>
 
 
 
-<!-- Ele usa vários recursos poderosos do Angular, como:
+<!-- Este html tem vários recursos poderosos do Angular, como:
 
 - Diretivas estruturais ( *ngIf ): Para mostrar ou esconder elementos com base em condições
 - Interpolação ( {{ }} ): Para mostrar valores das variáveis do componente

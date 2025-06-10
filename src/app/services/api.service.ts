@@ -28,6 +28,10 @@ export class ApiService {
     return this.http.put<User>(`${this.apiUrl}/${id}`, user);                                                    // Faz uma requisição PUT para atualizar um usuário existente no servidor
   }
 
+  getAllUsers(): Observable<User[]> {                                                                            // Método que retorna um Observable com um array de usuários
+    return this.http.get<User[]>(this.apiUrl);                                                                   // Faz uma requisição GET para obter todos os usuários do servidor
+  }
+
 }
 
 

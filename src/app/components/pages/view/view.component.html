@@ -6,32 +6,32 @@
 
       <div class="search-id">
 
-        <label for="userId">ID do Usuário:</label>
-        <input type="number" id="userId" > <!-- [(ngModel)]="userId" (keyup.enter)="searchUser()" -->
-        <button class="search-btn" >Buscar</button> <!-- (click)="searchUser()" -->
+        <label for="userId"> ID do Usuário: </label>
+        <input type="number" id="userIdToSearch" [(ngModel)]="userIdToSearch" (keyup.enter)="searchUser()">
+        <button class="search-btn" (click)="searchUser()"> Buscar </button>
 
       </div>
 
-      <div class="user-details"> <!-- *ngIf="user"  -->
+      <div class="user-details" *ngIf="user">
 
-        <p><strong>Nome:</strong> </p> <!-- {{ user.name }} -->
-        <p><strong>Número da Conta:</strong> </p> <!-- {{ user.account.number }} -->
-        <p><strong>Número da Agência:</strong> </p> <!-- {{ user.account.agency }} -->
-        <p><strong>Saldo:</strong> </p> <!-- {{ user.account.balance | currency:'BRL' }} -->
-        <p><strong>Limite da Conta:</strong> </p> <!-- {{ user.account.limit | currency:'BRL' }} -->
-        <p><strong>Número do Cartão:</strong> </p> <!-- {{ user.card.number }} -->
-        <p><strong>Limite do Cartão:</strong> </p> <!-- {{ user.card.limit | currency:'BRL' }} -->
+        <p><strong>Nome:</strong> {{ user.name }} </p>
+        <p><strong>Número da Conta:</strong> {{ user.account.number }} </p>
+        <p><strong>Número da Agência:</strong> {{ user.account.agency }} </p>
+        <p><strong>Saldo:</strong> {{ user.account.balance | currency:'BRL' }} </p>
+        <p><strong>Limite da Conta:</strong> {{ user.account.limit | currency:'BRL' }} </p>
+        <p><strong>Número do Cartão:</strong> {{ user.card.number }} </p>
+        <p><strong>Limite do Cartão:</strong> {{ user.card.limit | currency:'BRL' }} </p>
 
       </div>
 
-      <div class="not-found-message"> Usuário não encontrado! </div><!-- *ngIf="!user && searched && !successMessage"  -->
+      <div class="not-found-message" *ngIf="!user && searched"> Usuário não encontrado! </div>
 
     </div>
   </div>
 
 
 
-  <!-- Ele usa vários recursos poderosos do Angular, como:
+  <!-- Este html tem vários recursos poderosos do Angular, como:
 
   - Diretivas estruturais ( *ngIf ): Para mostrar ou esconder elementos com base em condições
   - Interpolação ( {{ }} ): Para mostrar valores das variáveis do componente

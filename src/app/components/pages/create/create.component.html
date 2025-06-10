@@ -47,7 +47,7 @@
         </div>
       </div>
 
-    <button type="submit" class="save-button" [disabled]="!userForm.valid" > Criar e Salvar </button> 
+    <button type="submit" class="save-button" [disabled]="!userForm.valid" > Criar e Salvar </button>
 
     <div *ngIf="errorMessage" {{ errorMessage }} class="error-message"> </div>                                                            <!-- *ngIf → Para que ele funcione, é necessário importar o CommonModule no arquivo .ts -->
 
@@ -57,7 +57,6 @@
 
 </div>
 
-<!-- FIXME: [disabled]="!userForm.valid" não está funcionando -->
 
 <!-- Este arquivo é super importante porque:
 
