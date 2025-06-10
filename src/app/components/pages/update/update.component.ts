@@ -19,7 +19,6 @@ export class UpdateComponent implements OnInit{
   errorMessage!: string;
   successMessage!: string;
   showConfirmation: boolean = false;
-  userId: number | null = null;                                                                                           // Variável para armazenar o ID do usuário que vem da API.
   accountId: number | null = null;                                                                                        // Variável para armazenar o ID da conta que vem da API.
   cardId: number | null = null;                                                                                           // Variável para armazenar o ID do cartão que vem da API.
 
@@ -59,7 +58,6 @@ export class UpdateComponent implements OnInit{
       this.apiService.getUserById(this.userIdToSearch).subscribe({
         next: (user: User) => {                                                                                            // Função chamada quando os dados são recebidos com sucesso. O objeto entre parêntesis representa a resposta da API.
           this.user = user;                                                                                                // Passa os valores do usuário recebidos da API para o objeto user, que é uma propriedade desta classe.
-          this.userId = user.id || null;                                                                                   // Passa o valor do ID do usuário que vem da API para a variável userId. Será utilizado para fazer o PUT para a API.
           this.accountId = user.account?.id || null;                                                                       // Passa o valor do ID da conta que vem da API para a variável accountId. Será utilizado para fazer o PUT para a API.
           this.cardId = user.card?.id || null;                                                                             // Passa o valor do ID do cartão que vem da API para a variável cardId. Será utilizado para fazer o PUT para a API.
 
@@ -81,7 +79,7 @@ export class UpdateComponent implements OnInit{
           };
 
           this.userForm.patchValue(formattedUser);                                                                          // Passa todos os dados da variável formattedUser para o objeto userForm, fazendo com que os valores do formulário sejam atualizados com os valores do usuário que veio da API.
-
+                                                                                                                            // Infelizemente os IDs não estão sendo passados para o userForm, porque não tem esses campos no formulário. Por isso precisamos criar variáveis para os IDs (this.accountId e this.cardId) para receber os IDs da API para depois podermos fazer o PUT corretamente. Para o ID do usuário usaremos esta variável this.userIdToSearch.
         },
         error: (error: any) => {
           console.error('Erro ao carregar usuário!', error);
