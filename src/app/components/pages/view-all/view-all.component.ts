@@ -11,9 +11,9 @@ import { User } from '../../../models/user';
   styleUrl: './view-all.component.scss'
 })
 export class ViewAllComponent implements OnInit{
-  users: User[] = [];                                                                                               // Propriedade para armazenar a lista de usuários que virá da API. Ela começa vazia.
+  users!: User[];                                                                                                   // Propriedade para armazenar a lista de usuários que virá da API. Ela começa vazia.
   loading: boolean = false;                                                                                         // Propriedade que controlará a visualização do aviso de carregamento. Começa como false (não está carregando).
-  searched: boolean = false;
+  showNotFound: boolean = false;                                                                                    // Propriedade que controlará a visualização do aviso de not-found. Começa como false e só fica true quando não houver usuários (error).
 
   constructor(
     private apiService: ApiService,
@@ -25,7 +25,6 @@ export class ViewAllComponent implements OnInit{
 
   loadUsers(): void {
     this.loading = true;                                                                                            // Define loading como true para mostrar um indicador de carregamento
-    this.searched = true;                                                                                        // Booleano que marca que a busca foi feita. Ele é importante para poder mostrar uma mensagem que o usuário não foi encontrado.
 
     this.apiService.getAllUsers().subscribe({
       next: (users: User[]) => {
@@ -37,6 +36,7 @@ export class ViewAllComponent implements OnInit{
       error: (error: any) => {
         console.error('Erro ao carregar usuários', error);
         this.loading = false;
+        this.showNotFound = true;
       }
     });
   }

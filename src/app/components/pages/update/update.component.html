@@ -70,7 +70,7 @@
 
     </div>
 
-    <button type="submit" class="save-button" (click)="showUpdateConfirmation()" [disabled]="!userForm.valid"> Atualizar e Salvar </button> 
+    <button type="submit" class="save-button" *ngIf="user" (click)="showUpdateConfirmation()" [disabled]="!userForm.valid"> Atualizar e Salvar </button>
 
     <div class="not-found-message" *ngIf="searched && !user"> Usuário não encontrado! </div>
 

@@ -2,9 +2,11 @@
 
   <h2 class="view-all-title"> Visualizar Todos </h2>
 
-  <div  class="loading-message" *ngIf="loading">                                                                  <!-- Mensagem de carregamento que só aparece quando loading é true -->
+  <div  class="loading-message" *ngIf="loading">                                                                  <!-- Mensagem de carregamento só aparece quando loading é true -->
     Carregando usuários...                                                                                        <!-- Texto que informa ao usuário que os dados estão sendo carregados -->
   </div>
+
+  <div class="not-found-message" *ngIf="!loading && showNotFound"> Nenhum usuário cadastrado! </div>              <!-- Mensagem de not-found só aparece quando loading é false e showNotFound é true -->
 
   <div class="view-all-form" *ngIf="users.length > 0">
 
@@ -35,9 +37,8 @@
 
     </div>
 
-    <div class="not-found-message" *ngIf="!users && searched"> Nenhum usuário cadastrado! </div>
-
   </div>
+
 </div>
 
 
