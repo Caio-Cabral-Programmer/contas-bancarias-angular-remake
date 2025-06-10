@@ -53,6 +53,8 @@ export class UpdateComponent implements OnInit{
   }
 
   searchUser(): void {
+    this.searched = true;                                                                                                  // Booleano que marca que a busca foi feita. Ele é importante para poder mostrar uma mensagem que o usuário não foi encontrado.
+
     if (this.userIdToSearch) {
       this.apiService.getUserById(this.userIdToSearch).subscribe({
         next: (user: User) => {                                                                                            // Função chamada quando os dados são recebidos com sucesso. O objeto entre parêntesis representa a resposta da API.
@@ -60,7 +62,6 @@ export class UpdateComponent implements OnInit{
           this.userId = user.id || null;                                                                                   // Passa o valor do ID do usuário que vem da API para a variável userId. Será utilizado para fazer o PUT para a API.
           this.accountId = user.account?.id || null;                                                                       // Passa o valor do ID da conta que vem da API para a variável accountId. Será utilizado para fazer o PUT para a API.
           this.cardId = user.card?.id || null;                                                                             // Passa o valor do ID do cartão que vem da API para a variável cardId. Será utilizado para fazer o PUT para a API.
-          this.searched = true;
 
           const formattedUser = {                                                                                          // Variável importante que recebe todos os dados do usuário que veio da API.
             id: user.id,
@@ -84,7 +85,6 @@ export class UpdateComponent implements OnInit{
         },
         error: (error: any) => {
           console.error('Erro ao carregar usuário!', error);
-          this.searched = true;                                                                                             // Booleano que marca que a busca foi feita. Ele é importante para poder mostrar uma mensagem que o usuário não foi encontrado.
         }
 
       });

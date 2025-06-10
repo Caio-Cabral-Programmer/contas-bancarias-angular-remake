@@ -26,15 +26,15 @@ export class DeleteComponent {
   ) { }
 
   searchUser(): void {
+    this.searched = true;                                                                                        // Booleano que marca que a busca foi feita. Ele é importante para poder mostrar uma mensagem que o usuário não foi encontrado.
+
     if (this.userIdToSearch) {
       this.apiService.getUserById(this.userIdToSearch).subscribe({
         next: (user: User) => {                                                                                       // Função chamada quando os dados são recebidos com sucesso. O objeto entre parêntesis representa a resposta da API.
           this.user = user;                                                                                           // Passa os valores do usuário recebidos da API para o objeto user, que é uma propriedade desta classe.
-          this.searched = true;
         },
         error: (error: any) => {
           console.error('Erro ao carregar usuário!', error);
-          this.searched = true;                                                                                        // Booleano que marca que a busca foi feita. Ele é importante para poder mostrar uma mensagem que o usuário não foi encontrado.
         }
 
       });
