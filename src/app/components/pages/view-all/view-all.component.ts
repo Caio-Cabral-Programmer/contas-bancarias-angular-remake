@@ -32,6 +32,9 @@ export class ViewAllComponent implements OnInit{
         setTimeout(() => {                                                                                          // Define um temporizador para realizar as ações seguintes após 2 segundos.
           this.loading = false;                                                                                     // Define loading como false para esconder o indicador de carregamento
           this.users = users;                                                                                       // Armazena a lista de usuários recebida na propriedade users desta classe.
+          if (users.length === 0) {
+            this.errorMessage = 'Nenhum usuário cadastrado!';
+          }
         }, 2000);
       },
       error: (error: any) => {

@@ -93,12 +93,16 @@ export class UpdateComponent implements OnInit{
   }
 
   showUpdateConfirmation(): void {
+    this.errorMessage = '';
+
     if (this.userIdToSearch === 1) {                                                                                         // Verifica se o ID do usuário é 1 (protegido contra exclusão)
       this.errorMessage = 'O usuário com ID 1 não pode ser atualizado!';
     } else { this.showConfirmation = true; }
   }
 
   onSubmit(): void {
+    this.errorMessage = '';
+
     if (this.userForm.valid) {
 
       const formValue = this.userForm.value;                                                                                 // Variável formValue necessária para receber os valores do objeto userForm, pois não estava funcionando passar os valores de userForm direto para a variável updatedUser.

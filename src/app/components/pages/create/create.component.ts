@@ -49,6 +49,8 @@ export class CreateComponent implements OnInit{
   }
 
   onSubmit(): void {
+    this.errorMessage = '';                                                                                                 // Ação necessária para apagar a mensagem de erro da chamada anterior.
+
     if (this.userForm.valid) {
       const user: User = this.userForm.value;
       this.apiService.createUser(user).subscribe({                                                                          // .subscribe() → é um método necessário por que o resultado do método .createUser(user) é um Observable <User>, ou seja, ele não vem na hora que é chamado, pois depende da resposta da API, então o método .subscribe() fica tipo na escuta, esperando atento a chegada da resposta da API.
@@ -56,7 +58,7 @@ export class CreateComponent implements OnInit{
           this.successMessage = 'Usuário criado com sucesso!';
           setTimeout(() => {                                                                                                // Define um temporizador para redirecionar após 2 segundos
             this.router.navigate(['/view-all']);                                                                            // Navega para a página de visualização de todos os usuários, após 2 segundos.
-          }, 2000);
+          }, 3000);
         },
         error: (error) => {                                                                                                 // Função chamada quando ocorre um erro
           if (error.error && typeof error.error === 'string') {                                                             // Verifica o tipo de erro baseado na resposta da API tem uma propriedade error que é uma string
