@@ -1,6 +1,6 @@
-# **API Bancária com Spring Boot e Frontend Angular (REMAKE de → https://github.com/Caio-Cabral-Programmer/Decola-Tech-2025---API-RestFul-Spring-Boot---Front-end)**  
+# **API Bancária com Spring Boot e Frontend Angular**  
 
-🚀 **Bem-vindo ao projeto de gerenciamento de contas bancárias!**  
+🚀 **REMAKE de → https://github.com/Caio-Cabral-Programmer/Decola-Tech-2025---API-RestFul-Spring-Boot---Front-end**  
 
 Depois de ter recebido ótimos feedbacks sobre o meu projeto full-stack do Decola Tech deste ano (2025), que é uma API Restful para gerenciamento de contas bancárias (CRUD completo com validações e tratamento de exceções) com Spring Boot e um front-end em Angular (que eu achei melhor adicionar para deixá-lo mais completo), resolvi fazer um remake dele todo do zero à guisa de estudo e melhorias.
 
