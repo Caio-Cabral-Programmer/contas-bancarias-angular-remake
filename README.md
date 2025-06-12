@@ -1,4 +1,4 @@
-# **API Bancária com Spring Boot e Frontend Angular**  
+# ** [REMAKE] API Bancária com Spring Boot e Frontend Angular**  
 
 🚀 **REMAKE de → https://github.com/Caio-Cabral-Programmer/Decola-Tech-2025---API-RestFul-Spring-Boot---Front-end**  
 
